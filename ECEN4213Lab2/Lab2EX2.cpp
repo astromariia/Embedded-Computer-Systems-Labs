@@ -36,9 +36,9 @@ int time_inter_ms = 23; // time interval, you can use different time interval
    
 int motor_pin = 26;
 int sonar_pin = 1;
-float kp= 2; 
-float ki= 0.0005; 
-float kd= 2;
+float kp = 2; 
+float ki = 0.0005; 
+float kd = 2;
 
 int main(){
 	wiringPiSetup();
@@ -87,16 +87,16 @@ void PID(float kp, float ki, float kd){
     distance_error = measured_value - obj_value;
     /*calculate the proportional, integral and derivative output */
     //adjust
-    if (obj_value > 50 && obj_value<=60)
+    if (obj_value > 50 && obj_value <= 60)
     {
-        kp=3;
+        kp = 3;
         ki = 0.001;
-        kd=50;
+        kd = 50;
     }
-    if (obj_value>60 && obj_value<=80){
-            kp=5;
-            ki = 0.0011;
-            kd=70;
+    if (obj_value > 60 && obj_value <= 80){
+        kp = 5;
+        ki = 0.0011;
+        kd = 70;
     }
     PID_p = kp * distance_error;
     PID_i = PID_i + (ki * distance_error*time_inter_ms);
@@ -105,9 +105,9 @@ void PID(float kp, float ki, float kd){
 
     /*assign distance_error to distance_previous_error*/
     distance_previous_error = distance_error; //Adjust
-    if (PID_total <0)
+    if (PID_total < 0)
        PID_total = 0;
-    if (PID_total >1024)
+    if (PID_total > 1024)
         PID_total = 1024;
     /*use PID_total to control your fan*/
     pwmWrite(motor_pin, int(PID_total));
@@ -153,23 +153,23 @@ float read_potentionmeter()
     float data;
     float sum = 0;
     int buff = 1;
-    for (int i=0;i<buff;i++)
+    double voltage;
+    for (int i = 0;i < buff; i++)
     {
        data  = adcVal();
-       sum +=data;
+       sum += data;
     }
     data = sum/buff;
     if (data > 1800)
        data = 0;
-    double v;
-    v = (data/2047.0)*6.144; // fs=6.144
-    float dis = data*100/1742;
-    if (dis<5)
-       dis = 5;
-    if (dis>90)
-       dis = 90;
+    voltage = (data/2047.0) * 6.144; // fs=6.144
+    float distance = data * 100/1742;
+    if (distance < 5)
+       distance = 5;
+    if (distance > 90)
+       distance = 90;
 
-   return dis;
+   return distance;
 }
 
 
