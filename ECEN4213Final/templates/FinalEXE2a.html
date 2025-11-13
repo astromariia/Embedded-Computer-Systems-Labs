@@ -1,0 +1,65 @@
+
+
+<html>
+  <head>
+    <center><h1>Kobuki Controller</h1></center>
+
+    <style>
+		body {
+			text-align: center;
+		}
+    </style>
+  </head>
+
+  <body>
+
+      <!-- image display module -->
+      <h1>Live Streaming</h1>
+      <img src="../static/img name.png" height="35%">
+
+      <hr>
+
+      <!-- sensor status display module -->
+      <div style="text-align: center; position:relative;top:5%;left:0%;">
+        <!-- module 2 sensor tag: Bumper, wheelDrop, Cilff -->	
+        <input style="font-size:20;height:80; width:150; border-radius: 10px;" type = "text" value = "Bumper"/>
+        <input style="font-size:20;height:80; width:150; border-radius: 10px;" type = "text" value = "Wheeldrop"/>
+        <input style="font-size:20;height:80; width:150; border-radius: 10px;" type = "text" value = "Cliff"/>
+        <!-- sensor tag: Bumper, wheelDrop, Cilff -->
+        <!-- add two more buttons here -->
+
+      </div>
+
+      <div style="text-align: center; position:relative;top:5%;left:0%; padding-bottom:50px;">
+        <!-- module 2 sensor status: on, off,… -->
+        <!-- <input style="font-size:20;height:60; width:100;" type = "button" id = "but1" value = "XX" /> -->
+        <input style="font-size:20;height:70; width:120; border-radius: 10px;" type = "button" id = "bumper" value = "OFF" />
+        <input style="font-size:20;height:70; width:120; border-radius: 10px;" type = "button" id = "wheeldrop" value = "OFF" />
+        <input style="font-size:20;height:70; width:120; border-radius: 10px;" type = "button" id = "cliff" value = "OFF" />
+        <!-- add two more buttons here -->
+      </div>
+
+      <!-- D-pad module -->
+      <div>
+          <div style = "text-align: center; margin:10px 0;">
+            <!-- up button -->
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "upbutton" value = "Up" />
+          
+          </div>
+          
+          <div style = "text-align: center; margin:10px 0;" >
+            <!-- left, stop and right button -->
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "leftbutton" value = "Left" />
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "stopbutton" value = "Stop" />
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "rightbutton" value = "Right" />
+          <!-- add two more buttons here -->
+          </div>
+          
+          <div style = "text-align: center; margin:10px 0;">
+          <!-- down button -->
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "downbutton" value = "Down" />
+          </div>
+      </div>
+
+  </body>
+</html>

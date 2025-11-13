@@ -102,34 +102,6 @@ int main(){
     	sleep(4);
     	serialClose(kobuki);
     }
-
-			// if(counter == 1){
-			// 	cout << "First move";
-			// 	movement(90, -1);
-			// 	sleep(4);
-			// 	movement(150,0);
-			// 	sleep(4);
-			// 	movement(0,0);
-			// 	continue;
-			// }
-			// if(counter == 2){
-			// 	movement(90, 1);
-			// 	sleep(4);
-			// 	movement(150,0);
-			// 	sleep(4);
-			// 	movement(0,0);
-			// 	continue;
-			// }
-			// if(counter == 3){
-			// 	movement(0,0);
-			// 	sleep(4);
-			// 	serialClose(kobuki);
-			// }
-		// else{
-		// 	movement(150,0);
-		// }
-
-	//}
 	/*Note: the Kobuki must completely pass point B as shown to receive full credit*/
 
 

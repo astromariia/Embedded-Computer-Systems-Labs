@@ -1,0 +1,86 @@
+
+
+<html>
+  <head>
+    <title>ECEN4213 IoT</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    
+    <script src="../static/parse_data.js"></script>
+
+
+    <!-- callback function for the upbutton pushing event -->
+    <script type=text/javascript> $(function() { $("#upbutton").click(function (event) { $.getJSON('/UpFunction', { },
+    function(data) { }); return false; }); }); </script> 
+
+    <!-- add four more functions for the left, right, down and stop buttons -->
+    <script type=text/javascript> $(function() { $("#downbutton").click(function (event) { $.getJSON('/DownFunction', { },
+      function(data) { }); return false; }); }); </script> 
+      <script type=text/javascript> $(function() { $("#rightbutton").click(function (event) { $.getJSON('/RightFunction', { },
+      function(data) { }); return false; }); }); </script>
+      <script type=text/javascript> $(function() { $("#leftbutton").click(function (event) { $.getJSON('/LeftFunction', { },
+      function(data) { }); return false; }); }); </script>
+      <script type=text/javascript> $(function() { $("#stopbutton").click(function (event) { $.getJSON('/StopFunction', { },
+      function(data) { }); return false; }); }); </script>
+
+
+    <style>
+		body {
+			text-align: center;
+		}
+    </style>
+  </head>
+
+  <body>
+
+    <!-- image display module -->
+    <h1>Live Streaming</h1>
+    <img src="{{ url_for('video_feed') }}" height="35%">
+
+    <hr>
+
+    <!-- sensor status display module -->
+    <div>
+      <!-- module 2 sensor tag: Bumper, wheelDrop, Cilff -->	
+      <!-- sensor tag: Bumper, wheelDrop, Cilff -->
+      <input style="font-size:20;height:80; width:150; border-radius: 10px;" type = "text" value = "Bumper"/>
+      <input style="font-size:20;height:80; width:150; border-radius: 10px;" type = "text" value = "Wheeldrop"/>
+      <input style="font-size:20;height:80; width:150; border-radius: 10px;" type = "text" value = "Cliff"/>
+      <!-- add two more buttons here -->
+
+    </div>
+
+    <div style="margin-bottom:30px;top:5%;left:0%; padding-bottom:50px;">
+      <!-- module 2 sensor status: on, off,… -->
+      <input style="font-size:20;height:70; width:120; border-radius: 10px;" type = "button" id = "bumper" value = "OFF" />
+      <input style="font-size:20;height:70; width:120; border-radius: 10px;" type = "button" id = "wheeldrop" value = "OFF" />
+      <input style="font-size:20;height:70; width:120; border-radius: 10px;" type = "button" id = "cliff" value = "OFF" />
+      <!-- add two more buttons here -->
+    </div>
+      
+
+
+    <!-- D-pad module -->
+    <div>
+        <div>
+          <!-- up button -->
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "upbutton" value = "Up" />
+        
+        </div>
+        
+        <div>
+          <!-- left, stop and right button -->
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "leftbutton" value = "Left" />
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "stopbutton" value = "Stop" />
+          <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "rightbutton" value = "Right" />
+        <!-- add two more buttons here -->
+        </div>
+        
+        <div>
+        <!-- down button -->
+        <input style="font-size:25;height:80px; width:80px;border-radius: 10px;" type = "button" id = "downbutton" value = "Down" />
+      </div>
+    </div>
+
+  </body>
+</html>

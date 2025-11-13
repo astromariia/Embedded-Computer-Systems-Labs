@@ -1,4 +1,4 @@
-//Use g++ -std=c++11 -o Lab4EX3 Lab4EX3.cpp -lwiringPi
+s //Use g++ -std=c++11 -o Lab4EX3 Lab4EX3.cpp -lwiringPi
 
 #include <string>
 #include <iostream>
